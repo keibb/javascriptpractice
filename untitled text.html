@@ -5,6 +5,8 @@
 	<title>JavaScriptのテスト</title>
 	<script>
 		function RotenT(t,h){
+		var t = parseInt(t);
+		var h = parseInt(h);
 		var Tk = t+273.15;
 		var lnew = -6096.9385/Tk+21.2409642-2.711193*0.01*Tk+1.673952*0.00001*Math.pow(Tk,2)+2.433502*Math.log(Tk);
 		var y = Math.log(h*Math.exp(lnew)/100/611.213);
@@ -29,6 +31,7 @@
 		var hm = prompt("現在の湿度は",);
 		
 		var x = RotenT(tp,hm);
+		document.write(typeof(tp));
 		document.write("露点は" + x +　"度です");
 		
 	</script>
