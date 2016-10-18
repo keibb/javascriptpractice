@@ -5,8 +5,8 @@
 	<title>JavaScriptのテスト</title>
 	<script>
 		function RotenT(t,h){
-		var t = parseInt(t);
-		var h = parseInt(h);
+		var t = parseFloat(t);
+		var h = parseFloat(h);
 		var Tk = t+273.15;
 		var lnew = -6096.9385/Tk+21.2409642-2.711193*0.01*Tk+1.673952*0.00001*Math.pow(Tk,2)+2.433502*Math.log(Tk);
 		var y = Math.log(h*Math.exp(lnew)/100/611.213);
@@ -17,6 +17,8 @@
 		{
 		var roten = 13.715*y+8.4262*0.1*Math.pow(y,2)+1.9048*0.01*Math.pow(y,3)+7.8158*0.001*Math.pow(y,4);
 		}
+		roten = roten * 100;
+		roten = Math.round(roten)/100;
 		return roten;
 		}
 		</script>
