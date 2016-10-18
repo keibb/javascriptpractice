@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<title>JavaScriptのテスト</title>
+	<script>
+		function RotenT(t,h){
+		var Tk = t+273.15;
+		var lnew = -6096.9385/Tk+21.2409642-2.711193*0.01*Tk+1.673952*0.00001*Math.pow(Tk,2)+2.433502*Math.log(Tk);
+		var y = Math.log(h*Math.exp(lnew)/100/611.213);
+		if(y < 0){
+		var roten = 13.7204*y+7.36631*0.1*Math.pow(y,2)+3.23136*0.01*Math.pow(y,3)+7.78591*0.001*Math.pow(y,4);
+		}
+		else
+		{
+		var roten = 13.715*y+8.4262*0.1*Math.pow(y,2)+1.9048*0.01*Math.pow(y,3)+7.8158*0.001*Math.pow(y,4);
+		}
+		return roten;
+		}
+		</script>
+	
+	
+</head>
+<body>
+<p>テキストテキスト</p>
+	<script>
+	
+		var tp = prompt("現在の気温は",);
+		var hm = prompt("現在の湿度は",);
+		
+		var x = RotenT(tp,hm);
+		document.write("露点は" + x +　"度です");
+		
+	</script>
+</body>
+</html>
